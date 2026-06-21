@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kulwant Jorwal — Explainer Animation | Work Samples</title>
+<meta name="description" content="Kulwant Jorwal — Explainer Animation work samples for freelance clients and hiring review.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0E0E10;
+    --card: #18181B;
+    --card-border: #262629;
+    --text: #EDECE8;
+    --text-dim: #8A8A8E;
+    --accent: #E8A33D;
+    --accent-dim: #6B5530;
+    --steel: #6B7280;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* subtle viewport grid texture in background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(232, 163, 61, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(232, 163, 61, 0.025) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ===== Header ===== */
+  header {
+    border-bottom: 1px solid var(--card-border);
+    padding: 28px 0;
+  }
+
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .id-block .tag {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .id-block .tag::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .id-block h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    letter-spacing: -0.01em;
+  }
+
+  .id-block .role {
+    color: var(--text-dim);
+    font-size: 15px;
+    margin-top: 6px;
+  }
+
+  .meta-block {
+    text-align: right;
+    font-size: 13px;
+    color: var(--text-dim);
+  }
+
+  .meta-block a {
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-dim);
+  }
+
+  .meta-block a:hover {
+    border-bottom-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .meta-block .loc {
+    margin-bottom: 4px;
+  }
+
+  /* ===== Intro strip ===== */
+  .intro {
+    padding: 36px 0 8px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+
+  .intro .count {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    color: var(--text-dim);
+    white-space: nowrap;
+    padding-top: 4px;
+  }
+
+  .intro .count strong {
+    color: var(--text);
+    font-size: 13px;
+  }
+
+  .intro p {
+    color: var(--text-dim);
+    font-size: 15px;
+    max-width: 560px;
+  }
+
+  /* ===== Grid ===== */
+  .grid {
+    padding: 32px 0 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px 22px;
+  }
+
+  @media (max-width: 860px) {
+    .grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 560px) {
+    .grid { grid-template-columns: 1fr; }
+    .intro { grid-template-columns: 1fr; gap: 8px; }
+  }
+
+  .card {
+    position: relative;
+  }
+
+  .frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .frame iframe,
+  .frame blockquote {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+
+  /* subtle border highlight on hover — quiet, professional */
+  .frame {
+    transition: border-color 0.2s ease;
+  }
+
+  .card:hover .frame {
+    border-color: var(--accent-dim);
+  }
+
+  .card .num {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    color: rgba(237, 236, 232, 0.35);
+    z-index: 4;
+    letter-spacing: 0.05em;
+  }
+
+  .caption {
+    margin-top: 10px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+    line-height: 1.4;
+  }
+
+  /* placeholder state before you swap in real embeds */
+  .frame.placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+      repeating-linear-gradient(45deg, var(--card) 0px, var(--card) 10px, #151517 10px, #151517 20px);
+  }
+
+  .frame.placeholder span {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    color: var(--text-dim);
+    text-align: center;
+    padding: 0 16px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ===== Footer ===== */
+  footer {
+    border-top: 1px solid var(--card-border);
+    padding: 28px 0 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 13px;
+    color: var(--text-dim);
+  }
+
+  footer a {
+    color: var(--text-dim);
+    text-decoration: none;
+    margin-left: 16px;
+  }
+
+  footer a:hover { color: var(--accent); }
+
+  footer .links a:first-child { margin-left: 0; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <div class="header-inner">
+      <div class="id-block">
+        <div class="tag">Work Samples</div>
+        <h1>Kulwant Jorwal</h1>
+        <div class="role">3D Explainer Animation</div>
+      </div>
+      <div class="meta-block">
+        <div class="loc">Jaipur, Rajasthan, India</div>
+        <a href="https://artstation.com/kulwantjorwal" target="_blank" rel="noopener">artstation.com/kulwantjorwal</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="intro">
+    <div class="count"><strong>05</strong> / projects</div>
+    <p>A selection of explainer animation work, shared here for freelance review and hiring purposes.</p>
+  </div>
+
+  <div class="grid">
+
+    <!-- CARD 1 -->
+    <div class="card">
+      <div class="frame">
+        <iframe src="https://www.youtube.com/embed/3sCfsr_TNOU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="num">01</div>
+      <div class="caption">Cricket ball impact and injury</div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card">
+      <div class="frame">
+        <iframe src="https://www.youtube.com/embed/kKQGWPWXUQA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="num">02</div>
+      <div class="caption">Tunguska event explained</div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="card">
+      <div class="frame">
+        <iframe src="https://www.youtube.com/embed/B2wGl3hEBwk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="num">03</div>
+      <div class="caption">Awake brain surgery walkthrough</div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="card">
+      <div class="frame">
+        <iframe src="https://www.youtube.com/embed/Oby00TPlUm0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="num">04</div>
+      <div class="caption">How a heart transplant works</div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="card">
+      <div class="frame">
+        <iframe src="https://www.youtube.com/embed/A_qOnVOfZQ0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="num">05</div>
+      <div class="caption">How a baby breathes inside the womb</div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div>© 2026 Kulwant Jorwal</div>
+    <div class="links">
+      <a href="https://artstation.com/kulwantjorwal" target="_blank" rel="noopener">ArtStation</a>
+      <a href="mailto:REPLACE_WITH_YOUR_EMAIL">Email</a>
+      <a href="https://linkedin.com/in/kulwantjorwal" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
